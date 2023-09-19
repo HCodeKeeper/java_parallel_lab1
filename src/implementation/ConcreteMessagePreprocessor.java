@@ -24,17 +24,21 @@ public class ConcreteMessagePreprocessor implements MessagePreprocessor {
         queues = new ArrayList<>(numQueues);
         transformers = new ArrayList<>(functions.size());
 
-        prepareQueues(initial.size(), capacity, numQueues);
+        prepareQueues(capacity, numQueues, initial);
         prepareTransformers(functions);
     }
 
-    private void prepareQueues(int messagesCount, int capacity, int numQueues){
+    private void prepareQueues(int capacity, int numQueues, Collection<String> messages){
         for (int i=0; i < numQueues; i++){
-            if (i == 0 || i == numQueues - 1){
-                queues.add(new LinkedBlockingQueue<>(messagesCount));
+            if (i == 0){
+                queues.add(new LinkedBlockingQueue<>(messages));
+            } else if (i == numQueues - 1) {
+                queues.add(new LinkedBlockingQueue<>(messages.size()));
             } else{
                 queues.add(new LinkedBlockingQueue<>(capacity));
             }
+            BlockingQueue<String> input_queue = queues.get(0);
+            input_queue.addAll(messages);
         }
     }
 

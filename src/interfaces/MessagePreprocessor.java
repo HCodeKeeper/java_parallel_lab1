@@ -6,8 +6,8 @@ import java.util.Optional;
 import java.util.concurrent.BlockingQueue;
 
 public interface MessagePreprocessor {
-    public void start();
-    public void stop();
-    public Optional<Collection<? extends String>> getResult();
+    void start();
+    void stop();
+    Optional<Collection<? extends String>> getResult();
     List<BlockingQueue<String>> getState();
 }
