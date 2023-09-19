@@ -7,7 +7,6 @@
     <list default="true" id="8bdd187c-e6f6-4609-9c27-092c68b37f00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/implementation/ConcreteMessagePreprocessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/implementation/ConcreteMessagePreprocessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/MessagePreprocessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/MessagePreprocessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -18,7 +18,7 @@ public class ConcreteMessagePreprocessor implements MessagePreprocessor {
             throw new IllegalArgumentException("Some of specified arguments were either null or empty");
         }
 
-        int numQueues = functions.size() + 2; // source + destination + rest intermediate
+        int numQueues = functions.size() + 1; // source + destination + rest intermediate
         int capacity = initial.size() / 2;
 
         queues = new ArrayList<>(numQueues);
@@ -78,7 +78,6 @@ public class ConcreteMessagePreprocessor implements MessagePreprocessor {
         try {
             while (true) {
                 String message = destinationQueue.take();
-                System.out.println(message);
                 if (message.equals("empty")) {
                     break;
                 }
